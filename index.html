@@ -8,6 +8,21 @@
   <meta name="keywords" content="Entrümpelung Mahlberg, Entrümpelung Pfullendorf, Haushaltsauflösung, Umzug Ortenaukreis, Transport Schwarzwald">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sw-immoservice.de/">
+  <!-- Open Graph / WhatsApp / Social Media Vorschau -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sw-immoservice.de/">
+  <meta property="og:title" content="SW ImmoService – Entrümpelung · Umzug · Transport">
+  <meta property="og:description" content="Professionelle Entrümpelung, Haushaltsauflösungen, Umzüge und Transporte in Süddeutschland. Faire Preise, schnelle Termine. Jetzt anfragen!">
+  <meta property="og:image" content="https://sw-immoservice.de/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="SW ImmoService">
+  <!-- Twitter/iMessage -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SW ImmoService – Entrümpelung · Umzug · Transport">
+  <meta name="twitter:description" content="Professionelle Entrümpelung, Haushaltsauflösungen, Umzüge und Transporte in Süddeutschland.">
+  <meta name="twitter:image" content="https://sw-immoservice.de/og-image.jpg">
   <meta name="google-site-verification" content="oZaW7muaBBs2F4WxS3mCxWAkmD5J3AH8mg7NMmJcHrg" />
 
   <style>
@@ -267,31 +282,45 @@
         <div class="info-val">Mo–Sa 12:00 – 20:00 Uhr</div>
       </div>
     </div>
-    <form class="kontakt-form" action="mailto:info@sw-immoservice.de" method="post" enctype="text/plain">
-      <div><label for="name">Name</label><input type="text" id="name" name="Name" placeholder="Max Mustermann" required></div>
-      <div><label for="email">E-Mail *</label><input type="email" id="email" name="Email" placeholder="ihre@email.de" required></div>
-      <div>
-        <label for="leistung">Gewünschte Leistung</label>
-        <select id="leistung" name="Leistung">
-          <option value="">Bitte wählen</option>
-          <option>Entrümpelung</option>
-          <option>Haushaltsauflösung</option>
-          <option>Transport</option>
-          <option>Umzug (regional)</option>
-          <option>Umzug (bundesweit)</option>
-          <option>Mehrere / Sonstiges</option>
-        </select>
+    <div data-fs-success style="display:none; background:var(--plate); border:2px solid var(--gold); padding:2rem; border-radius:2px; text-align:center;">
+        <p style="color:var(--white); font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:700; margin-bottom:.5rem;">✓ Anfrage gesendet!</p>
+        <p style="color:var(--mist); font-size:.9rem;">Wir melden uns schnellstmöglich bei Ihnen zurück.</p>
       </div>
-      <div><label for="ort">Ort des Objekts</label><input type="text" id="ort" name="Ort" placeholder="z.B. Mahlberg, Lahr, Pfullendorf ..."></div>
-      <div><label for="nachricht">Kurze Beschreibung</label><textarea id="nachricht" name="Nachricht" placeholder="z.B. Keller ca. 30m², Dachboden mit Möbeln ..."></textarea></div>
-      <div>
-        <label for="fotos">📎 Fotos anhängen (optional)</label>
-        <input type="file" id="fotos" name="Fotos" accept="image/*" multiple>
-        <small style="color:var(--mist);font-size:.73rem;margin-top:.2rem;display:block;">Fotos helfen uns bei der schnellen Einschätzung</small>
-      </div>
-      <button type="submit" class="form-submit">Anfrage senden →</button>
-      <p style="font-size:.74rem;color:var(--mist);">Kostenlose Erstberatung · Keine Verbindlichkeit · Schnelle Rückmeldung</p>
-    </form>
+      <div data-fs-error style="display:none; background:#3d1a1a; border:1px solid #c0392b; padding:1rem; border-radius:2px; color:#e74c3c; font-size:.85rem; margin-bottom:.5rem;"></div>
+
+      <form id="kontakt-form" class="kontakt-form">
+        <div><label for="name">Name</label><input type="text" id="name" name="Name" placeholder="Max Mustermann" required data-fs-field></div>
+        <div><label for="email">E-Mail *</label><input type="email" id="email" name="email" placeholder="ihre@email.de" required data-fs-field>
+          <span data-fs-error="email" style="color:#e74c3c; font-size:.75rem;"></span>
+        </div>
+        <div>
+          <label for="leistung">Gewünschte Leistung</label>
+          <select id="leistung" name="Leistung" data-fs-field>
+            <option value="">Bitte wählen</option>
+            <option>Entrümpelung</option>
+            <option>Haushaltsauflösung</option>
+            <option>Transport</option>
+            <option>Umzug (regional)</option>
+            <option>Umzug (bundesweit)</option>
+            <option>Mehrere / Sonstiges</option>
+          </select>
+        </div>
+        <div><label for="ort">Ort des Objekts</label><input type="text" id="ort" name="Ort" placeholder="z.B. Mahlberg, Lahr, Pfullendorf ..." data-fs-field></div>
+        <div><label for="nachricht">Kurze Beschreibung</label><textarea id="nachricht" name="Nachricht" placeholder="z.B. Keller ca. 30m², Dachboden mit Möbeln ..." data-fs-field></textarea></div>
+        <div>
+          <label for="fotos">📎 Fotos anhängen (optional)</label>
+          <input type="file" id="fotos" name="Fotos" accept="image/*" multiple>
+          <small style="color:var(--mist);font-size:.73rem;margin-top:.2rem;display:block;">Fotos helfen uns bei der schnellen Einschätzung</small>
+        </div>
+        <button type="submit" class="form-submit" data-fs-submit-btn>Anfrage senden →</button>
+        <p style="font-size:.74rem;color:var(--mist);">Kostenlose Erstberatung · Keine Verbindlichkeit · Schnelle Rückmeldung</p>
+      </form>
+
+      <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#kontakt-form', formId: 'meevejyy' });
+      </script>
+      <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </div>
 </section>
 
