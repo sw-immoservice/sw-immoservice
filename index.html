@@ -100,6 +100,60 @@
     .hero-btns{animation:fadeUp .6s .3s ease both}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
+  
+    /* ── MOBILE FIXES ── */
+    @media(max-width: 768px) {
+      /* Nav - kleineres Logo auf Mobile */
+      nav { padding: 0 1rem; }
+      .nav-logo img { height: 65px; }
+      .nav-links { gap: 0.8rem; }
+      .nav-links a { font-size: .72rem; letter-spacing: .03em; }
+      .nav-cta { padding: .35rem .8rem; font-size: .72rem !important; }
+
+      /* Hero */
+      .hero { padding: 6rem 1.2rem 3rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      /* tu-card Grid auf Mobile - single column, kein overflow */
+      .tu-card {
+        grid-template-columns: 50px 1fr;
+        gap: 1rem;
+        padding: 1.5rem 1.2rem;
+        overflow: hidden;
+      }
+      .tu-icon { font-size: 2rem; }
+      .tu-card h3 {
+        font-size: 1.3rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        hyphens: auto;
+      }
+      .tu-card p { font-size: .85rem; }
+      .tu-tags { gap: .3rem; }
+      .tag { font-size: .62rem; padding: .1rem .35rem; }
+
+      /* Kontakt */
+      .kontakt { padding: 2.5rem 1.2rem; }
+      .kontakt-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      /* Footer */
+      footer { padding: 2rem 1.2rem 1rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.2rem; }
+      .footer-brand img { height: 120px; }
+      .footer-bottom { flex-direction: column; gap: .4rem; font-size: .68rem; }
+
+      /* Sections */
+      .tu-section { padding: 2.5rem 1.2rem; }
+
+      /* Form */
+      .kontakt-form input, .kontakt-form select, .kontakt-form textarea { font-size: .88rem; }
+    }
+
+    /* Scroll offset für fixe Nav bei Anker-Links */
+    html { scroll-padding-top: 90px; }
+    @media(max-width: 768px) { html { scroll-padding-top: 70px; } }
+
   </style>
 </head>
 <body>
@@ -151,7 +205,7 @@
       <div class="tu-card" id="haushaltsaufloesung" style="background:var(--plate);">
         <div class="tu-icon">🏠</div>
         <div>
-          <h3>Haushaltsauflösungen</h3>
+          <h3 style="word-break:break-word;hyphens:auto;">Haushalts&shy;auflösungen</h3>
           <p>Komplette Wohnungsauflösung inkl. Möbel, Elektrogeräten und persönlichen Gegenständen. Einfühlsam, professionell. Wertanrechnung möglich, auf Wunsch besenrein.</p>
           <div class="tu-tags"><span class="tag">Komplettauflösung</span><span class="tag">Wertanrechnung</span><span class="tag">Besenrein</span><span class="tag">Privat</span></div>
         </div>
