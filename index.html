@@ -393,6 +393,15 @@ Vertreten durch: Steven Schuh &amp; Nils Wörner</p>
     e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  // Danke-Meldung nach Formular-Absenden
+  if(window.location.search.includes('gesendet=1')) {
+    const form = document.querySelector('.kontakt-form');
+    if(form) {
+      form.innerHTML = '<div style="background:var(--plate);border:2px solid var(--gold);padding:2.5rem;border-radius:2px;text-align:center;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><p style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:1.8rem;text-transform:uppercase;color:#fff;margin-bottom:.5rem;">Anfrage gesendet!</p><p style="color:var(--mist);font-size:.95rem;">Wir melden uns schnellstmöglich zurück.<br>Mo–Sa 12:00 – 20:00 Uhr</p></div>';
+      form.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }
 </script>
 
 <script>
