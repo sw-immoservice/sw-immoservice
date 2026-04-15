@@ -282,7 +282,9 @@
         <div class="info-val">Mo–Sa 12:00 – 20:00 Uhr</div>
       </div>
     </div>
-    <form class="kontakt-form" action="https://formspree.io/f/meevejyy" method="POST" enctype="multipart/form-data">
+    <form class="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="kontakt">
+        <p style="display:none"><input name="bot-field"></p>
         <div><label for="name">Name</label><input type="text" id="name" name="Name" placeholder="Max Mustermann" required></div>
         <div><label for="email">E-Mail *</label><input type="email" id="email" name="email" placeholder="ihre@email.de" required></div>
         <div>
@@ -299,10 +301,8 @@
         </div>
         <div><label for="ort">Ort des Objekts</label><input type="text" id="ort" name="Ort" placeholder="z.B. Mahlberg, Lahr, Pfullendorf ..."></div>
         <div><label for="nachricht">Kurze Beschreibung</label><textarea id="nachricht" name="Nachricht" placeholder="z.B. Keller ca. 30m², Dachboden mit Möbeln ..."></textarea></div>
-        <div>
-          <label for="fotos">📎 Fotos anhängen (optional)</label>
-          <input type="file" id="fotos" name="Fotos" accept="image/*" multiple>
-          <small style="color:var(--mist);font-size:.73rem;margin-top:.2rem;display:block;">Fotos helfen uns bei der schnellen Einschätzung</small>
+        <div style="background:var(--plate);border-left:3px solid var(--gold);padding:.8rem 1rem;border-radius:2px;">
+          <p style="font-size:.85rem;color:var(--mist);">📎 <strong style="color:var(--chalk);">Fotos vom Objekt?</strong> Schicken Sie diese per E-Mail an <a href="mailto:info@sw-immoservice.de" style="color:var(--gold);">info@sw-immoservice.de</a> – wir antworten schnellstmöglich.</p>
         </div>
         <button type="submit" class="form-submit">Anfrage senden →</button>
         <p style="font-size:.74rem;color:var(--mist);">Kostenlose Erstberatung · Keine Verbindlichkeit · Schnelle Rückmeldung</p>
