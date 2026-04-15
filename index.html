@@ -103,6 +103,15 @@
   
     /* ── MOBILE FIXES ── */
     @media(max-width: 768px) {
+      /* Nav CTA Button auf Mobile - kompakt, einzeilig */
+      .nav-cta {
+        display: inline-block !important;
+        padding: .35rem .7rem !important;
+        font-size: .68rem !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+      }
+
       /* Nav - kleineres Logo auf Mobile */
       nav { padding: 0 1rem; }
       .nav-logo img { height: 65px; }
@@ -153,6 +162,15 @@
     /* Scroll offset für fixe Nav bei Anker-Links */
     html { scroll-padding-top: 90px; }
     @media(max-width: 768px) { html { scroll-padding-top: 70px; } }
+
+  
+    @media(max-width: 480px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .nav-cta { 
+        padding: .45rem 1.2rem !important;
+        font-size: .78rem !important;
+      }
+    }
 
   </style>
 </head>
