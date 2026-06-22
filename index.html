@@ -8,7 +8,6 @@
   <meta name="keywords" content="Entrümpelung Mahlberg, Entrümpelung Pfullendorf, Haushaltsauflösung, Umzug Ortenaukreis, Transport Schwarzwald">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sw-immoservice.de/">
-  <!-- Open Graph / WhatsApp / Social Media Vorschau -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sw-immoservice.de/">
   <meta property="og:title" content="SW ImmoService – Entrümpelung · Umzug · Transport">
@@ -18,7 +17,6 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="SW ImmoService">
-  <!-- Twitter/iMessage -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SW ImmoService – Entrümpelung · Umzug · Transport">
   <meta name="twitter:description" content="Professionelle Entrümpelung, Haushaltsauflösungen, Umzüge und Transporte in Süddeutschland.">
@@ -96,6 +94,16 @@
     .form-submit{background:var(--gold);color:var(--ink);border:none;padding:.85rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .2s}
     .form-submit:hover{background:var(--amber)}
 
+    /* WhatsApp Button */
+    .btn-whatsapp{display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;padding:.75rem 1.4rem;border-radius:2px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .15s;margin-top:.4rem}
+    .btn-whatsapp:hover{background:#1ebe5d;transform:translateY(-1px)}
+    .btn-whatsapp svg{flex-shrink:0}
+
+    /* Floating WhatsApp Button */
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.75rem 1.2rem;border-radius:50px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:background .2s,transform .15s}
+    .wa-float:hover{background:#1ebe5d;transform:translateY(-2px)}
+    @media(max-width:480px){.wa-float span{display:none}.wa-float{padding:.85rem}}
+
     footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 2.5rem 1.5rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem}
     @media(max-width:700px){.footer-inner{grid-template-columns:1fr;gap:1.5rem}}
@@ -116,80 +124,44 @@
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
 
-    /* ── MOBILE FIXES ── */
     @media(max-width: 768px) {
-      /* Nav CTA Button auf Mobile - kompakt, einzeilig */
-      .nav-cta {
-        display: inline-block !important;
-        padding: .35rem .7rem !important;
-        font-size: .68rem !important;
-        white-space: nowrap !important;
-        line-height: 1.2 !important;
-      }
-
-      /* Nav - kleineres Logo auf Mobile */
-      nav { padding: 0 1rem; }
-      .nav-logo img { height: 65px; }
-      .nav-links { gap: 0.8rem; }
-      .nav-links a { font-size: .72rem; letter-spacing: .03em; }
-      .nav-cta { padding: .35rem .8rem; font-size: .72rem !important; }
-
-      /* Hero */
-      .hero { padding: 6rem 1.2rem 3rem; }
-      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-
-      /* tu-card Grid auf Mobile - single column, kein overflow */
-      .tu-card {
-        grid-template-columns: 50px 1fr;
-        gap: 1rem;
-        padding: 1.5rem 1.2rem;
-        overflow: hidden;
-      }
-      .tu-icon { font-size: 2rem; }
-      .tu-card h3 {
-        font-size: 1.3rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        hyphens: auto;
-      }
-      .tu-card p { font-size: .85rem; }
-      .tu-tags { gap: .3rem; }
-      .tag { font-size: .62rem; padding: .1rem .35rem; }
-
-      /* Kontakt */
-      .kontakt { padding: 2.5rem 1.2rem; }
-      .kontakt-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
-
-      /* Footer */
-      footer { padding: 2rem 1.2rem 1rem; }
-      .footer-inner { grid-template-columns: 1fr; gap: 1.2rem; }
-      .footer-brand img { height: 120px; }
-      .footer-bottom { flex-direction: column; gap: .4rem; font-size: .68rem; }
-
-      /* Sections */
-      .tu-section { padding: 2.5rem 1.2rem; }
-
-      /* Form */
-      .kontakt-form input, .kontakt-form select, .kontakt-form textarea { font-size: .88rem; }
+      .nav-cta{display:inline-block!important;padding:.35rem .7rem!important;font-size:.68rem!important;white-space:nowrap!important;line-height:1.2!important}
+      nav{padding:0 1rem}
+      .nav-logo img{height:65px}
+      .nav-links{gap:0.8rem}
+      .nav-links a{font-size:.72rem;letter-spacing:.03em}
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero-inner{grid-template-columns:1fr;gap:1.5rem}
+      .tu-card{grid-template-columns:50px 1fr;gap:1rem;padding:1.5rem 1.2rem;overflow:hidden}
+      .tu-icon{font-size:2rem}
+      .tu-card h3{font-size:1.3rem;word-break:break-word;overflow-wrap:break-word;white-space:normal;hyphens:auto}
+      .tu-card p{font-size:.85rem}
+      .tu-tags{gap:.3rem}
+      .tag{font-size:.62rem;padding:.1rem .35rem}
+      .kontakt{padding:2.5rem 1.2rem}
+      .kontakt-wrap{grid-template-columns:1fr;gap:1.5rem}
+      footer{padding:2rem 1.2rem 1rem}
+      .footer-inner{grid-template-columns:1fr;gap:1.2rem}
+      .footer-brand img{height:120px}
+      .footer-bottom{flex-direction:column;gap:.4rem;font-size:.68rem}
+      .tu-section{padding:2.5rem 1.2rem}
+      .kontakt-form input,.kontakt-form select,.kontakt-form textarea{font-size:.88rem}
     }
-
-    /* Scroll offset für fixe Nav bei Anker-Links */
-    html { scroll-padding-top: 90px; }
-    @media(max-width: 768px) { html { scroll-padding-top: 70px; } }
-
-  
-    @media(max-width: 480px) {
-      .nav-links li:not(:last-child) { display: none; }
-      .nav-cta { 
-        padding: .45rem 1.2rem !important;
-        font-size: .78rem !important;
-      }
+    html{scroll-padding-top:90px}
+    @media(max-width:768px){html{scroll-padding-top:70px}}
+    @media(max-width:480px){
+      .nav-links li:not(:last-child){display:none}
+      .nav-cta{padding:.45rem 1.2rem!important;font-size:.78rem!important}
     }
-
   </style>
 </head>
 <body>
+
+<!-- Floating WhatsApp Button -->
+<a class="wa-float" href="https://wa.me/4978224229061" target="_blank" rel="noopener">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.832L.057 23.428a.5.5 0 0 0 .609.61l5.71-1.497A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.371l-.361-.214-3.737.979.998-3.645-.235-.374A9.9 9.9 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z"/></svg>
+  <span>WhatsApp</span>
+</a>
 
 <nav>
   <a class="nav-logo" href="#top">
@@ -268,7 +240,11 @@
     <div class="kontakt-info">
       <p class="section-tag">Jetzt anfragen</p>
       <h2>Schreiben Sie<br>uns einfach.</h2>
-      <p>Schildern Sie kurz Ihr Anliegen – wir melden uns schnellstmöglich zurück mit einem unverbindlichen Angebot. Am einfachsten per E-Mail, gerne mit Fotos.</p>
+      <p>Schildern Sie kurz Ihr Anliegen – wir melden uns schnellstmöglich zurück mit einem unverbindlichen Angebot. Am einfachsten per E-Mail oder WhatsApp, gerne mit Fotos.</p>
+      <div class="info-block">
+        <div class="info-label">Telefon</div>
+        <div class="info-val"><a href="tel:+4978224229061">07822 4229061</a></div>
+      </div>
       <div class="info-block">
         <div class="info-label">E-Mail</div>
         <div class="info-val"><a href="mailto:info@sw-immoservice.de">info@sw-immoservice.de</a></div>
@@ -281,6 +257,10 @@
         <div class="info-label">Erreichbar</div>
         <div class="info-val">Mo–Sa 12:00 – 20:00 Uhr</div>
       </div>
+      <a class="btn-whatsapp" href="https://wa.me/4978224229061" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.832L.057 23.428a.5.5 0 0 0 .609.61l5.71-1.497A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.371l-.361-.214-3.737.979.998-3.645-.235-.374A9.9 9.9 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z"/></svg>
+        WhatsApp schreiben
+      </a>
     </div>
     <form class="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?gesendet=1">
         <input type="hidden" name="form-name" value="kontakt">
@@ -302,7 +282,7 @@
         <div><label for="ort">Ort des Objekts</label><input type="text" id="ort" name="Ort" placeholder="z.B. Mahlberg, Lahr, Pfullendorf ..."></div>
         <div><label for="nachricht">Kurze Beschreibung</label><textarea id="nachricht" name="Nachricht" placeholder="z.B. Keller ca. 30m², Dachboden mit Möbeln ..."></textarea></div>
         <div style="background:var(--plate);border-left:3px solid var(--gold);padding:.8rem 1rem;border-radius:2px;">
-          <p style="font-size:.85rem;color:var(--mist);">📎 <strong style="color:var(--chalk);">Fotos vom Objekt?</strong> Schicken Sie diese per E-Mail an <a href="mailto:info@sw-immoservice.de" style="color:var(--gold);">info@sw-immoservice.de</a> – wir antworten schnellstmöglich.</p>
+          <p style="font-size:.85rem;color:var(--mist);">📎 <strong style="color:var(--chalk);">Fotos vom Objekt?</strong> Schicken Sie diese per E-Mail an <a href="mailto:info@sw-immoservice.de" style="color:var(--gold);">info@sw-immoservice.de</a> oder per <a href="https://wa.me/4978224229061" target="_blank" style="color:var(--gold);">WhatsApp</a> – wir antworten schnellstmöglich.</p>
         </div>
         <button type="submit" class="form-submit">Anfrage senden →</button>
         <p style="font-size:.74rem;color:var(--mist);">Kostenlose Erstberatung · Keine Verbindlichkeit · Schnelle Rückmeldung</p>
@@ -342,7 +322,7 @@
       Angaben gemäß § 5 DDG<br>
       SW ImmoService GbR · Hauptstraße 19a · 77972 Mahlberg<br>
       Vertreten durch: Steven Schuh &amp; Nils Wörner<br>
-      E-Mail: <a href="mailto:info@sw-immoservice.de" style="color:var(--mist);">info@sw-immoservice.de</a><br><br>
+      Tel.: <a href="tel:+4978224229061" style="color:var(--mist);">07822 4229061</a> · E-Mail: <a href="mailto:info@sw-immoservice.de" style="color:var(--mist);">info@sw-immoservice.de</a><br><br>
       <strong style="color:var(--chalk);">Verbraucherstreitbeilegung</strong><br>
       Wir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil und sind dazu auch nicht verpflichtet.
     </div>
@@ -350,39 +330,26 @@
 <div style="max-width:800px; margin:0 auto; color:#a8b8cc; font-size:.85rem; line-height:1.8;">
 <button onclick="closeDatenschutz()" style="float:right; background:#c9a227; border:none; color:#111; padding:.5rem 1rem; cursor:pointer; font-weight:700; margin-bottom:1rem;">✕ Schließen</button>
 <h1 style="color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:2rem; margin-bottom:1.5rem;">Datenschutzerklärung</h1>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Verantwortlicher</h2>
-<p>SW ImmoService GbR<br>
-Hauptstraße 19a<br>
-77972 Mahlberg<br>
-E-Mail: <a href="mailto:info@sw-immoservice.de" style="color:#c9a227;">info@sw-immoservice.de</a><br>
-Vertreten durch: Steven Schuh &amp; Nils Wörner</p>
-
+<p>SW ImmoService GbR<br>Hauptstraße 19a<br>77972 Mahlberg<br>E-Mail: <a href="mailto:info@sw-immoservice.de" style="color:#c9a227;">info@sw-immoservice.de</a><br>Vertreten durch: Steven Schuh &amp; Nils Wörner</p>
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Welche Daten wir erheben</h2>
 <p>Bei der Nutzung unserer Website werden folgende Daten verarbeitet:</p>
 <ul style="margin:.5rem 0 .5rem 1.5rem;">
 <li>IP-Adresse und technische Zugriffsdaten (durch den Webhoster Netlify)</li>
 <li>Daten die Sie uns über das Kontaktformular mitteilen (Name, E-Mail, Beschreibung)</li>
 </ul>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Kontaktformular</h2>
 <p>Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (Name, E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Webhosting</h2>
 <p>Unsere Website wird bei Netlify Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA gehostet. Beim Abruf der Website werden automatisch Serverlogfiles gespeichert (IP-Adresse, Browsertyp, Datum/Uhrzeit). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Social Media</h2>
 <p>Wir unterhalten Profile bei Instagram und Facebook (Meta Platforms Ireland Limited). Bei Besuch dieser Profile können Daten außerhalb der EU verarbeitet werden. Weitere Informationen: <a href="https://privacycenter.instagram.com/policy/" target="_blank" style="color:#c9a227;">Instagram Datenschutz</a> / <a href="https://www.facebook.com/privacy/policy/" target="_blank" style="color:#c9a227;">Facebook Datenschutz</a>.</p>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten sowie das Recht auf Datenübertragbarkeit. Wenden Sie sich dazu an: <a href="mailto:info@sw-immoservice.de" style="color:#c9a227;">info@sw-immoservice.de</a></p>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Cookies</h2>
 <p>Unsere Website verwendet keine Tracking-Cookies. Es werden ausschließlich technisch notwendige Cookies eingesetzt.</p>
-
 <h2 style="color:#c9a227; font-family:'Barlow Condensed',sans-serif; margin:1.5rem 0 .5rem;">Verbraucherstreitbeilegung</h2>
 <p>Wir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.</p>
-
 <p style="margin-top:2rem; font-size:.75rem; color:#666;">Stand: 15. April 2026</p>
 </div>
 </div>
@@ -396,7 +363,6 @@ Vertreten durch: Steven Schuh &amp; Nils Wörner</p>
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(r => io.observe(r));
 
-  // Danke-Meldung nach Formular-Absenden
   if(window.location.search.includes('gesendet=1')) {
     const form = document.querySelector('.kontakt-form');
     if(form) {
@@ -415,11 +381,9 @@ Vertreten durch: Steven Schuh &amp; Nils Wörner</p>
     document.getElementById('datenschutz-inhalt').style.display = 'none';
     document.body.style.overflow = '';
   }
-  // Close on backdrop click
   document.getElementById('datenschutz-inhalt').addEventListener('click', function(e) {
     if (e.target === this) closeDatenschutz();
   });
-  // Close on Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeDatenschutz();
   });
